@@ -1,36 +1,35 @@
 const bodyParser = require("body-parser");
-const excerciseService = require("../services/exerciseService")
+const exerciseService = require("../services/exerciseService")
 
-const getAllExcercises = (req, res)=>{
-    const allExcercises = excerciseService.getAllExcercises()
-    res.send({ status: "todo en orden", data: allExcercises });
+const getAllExercises = (req, res)=>{
+    const allExercises = exerciseService.getAllExercises()
+    res.send({ status: "todo en orden", data: allExercises });
 }
 
-const getOneExcercise = (req, res)=>{
+const getOneExercise = (req, res)=>{
     const {
-        params: { excersiceId },
+        params: { exersiceId },
     } = req;
-    if(!excersiceId){
+    if(!exersiceId){
         return ;
     }
-    
-    const excercise = excerciseService.getOneExcercise(excersiceId)
-    res.send({ status: "OK", data: excercise });
+    const exercise = exerciseService.getOneExercise(exersiceId)
+    res.send({ status: "OK", data: exercise });
 }
 
-const createNewExcercise = (req, res)=>{
+const createNewExercise = (req, res)=>{
     const { body } = req;
     if(
         !body.name 
     ){
         return;
     }
-    const newExcercise = {
+    const newExercise = {
         name: body.name,  
     }
 
-    const createdExcercise = excerciseService.createNewExcercise(newExcercise)
-    res.status(201).send({ status: "ok", data: createdExcercise });
+    const createdExercise = exerciseService.createNewExercise(newExercise)
+    res.status(201).send({ status: "ok", data: createdExercise });
 }
 
 const updateOneExcercise = (req, res)=>{
@@ -44,9 +43,9 @@ const deleteOneExcercise = (req, res)=>{
 }
 
 module.exports= {
-    getAllExcercises,
-    getOneExcercise,
-    createNewExcercise,
+    getAllExercises,
+    getOneExercise,
+    createNewExercise,
     updateOneExcercise,
     deleteOneExcercise,
 }; 

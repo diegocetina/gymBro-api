@@ -1,5 +1,5 @@
 {
-  "excercises": [
+  "exercises": [
     {
       "id": "1",
       "name": "push ups "
@@ -17,6 +17,30 @@
       "name": "OTRO MAS",
       "createdAt": "1/17/2023, 4:58:01 PM",
       "updatedAt": "1/17/2023, 4:58:01 PM"
+    },
+    {
+      "id": "02345fe8-4aad-40a7-8612-24c799a5e998",
+      "name": "el diego",
+      "createdAt": "1/17/2023, 9:12:01 PM",
+      "updatedAt": "1/17/2023, 9:12:01 PM"
+    },
+    {
+      "id": "82e9c01e-21d4-4a47-a796-cdef42ff85d5",
+      "name": "crack",
+      "createdAt": "1/17/2023, 9:12:33 PM",
+      "updatedAt": "1/17/2023, 9:12:33 PM"
+    },
+    {
+      "id": "6bc0311f-1982-4d78-aef3-b80ead247a67",
+      "name": "uno mas",
+      "createdAt": "1/17/2023, 9:12:42 PM",
+      "updatedAt": "1/17/2023, 9:12:42 PM"
+    },
+    {
+      "id": "80cb5f9b-c5c0-4b1e-bae2-e1325c8cf6aa",
+      "name": "para modificar",
+      "createdAt": "1/17/2023, 9:13:52 PM",
+      "updatedAt": "1/17/2023, 9:13:52 PM"
     }
   ]
 }
