@@ -9,8 +9,8 @@ router.get("/:exersiceId", exerciseController.getOneExercise);
 
 router.post("/", exerciseController.createNewExercise);
 
-router.patch("/:excersiceId", exerciseController.updateOneExcercise);
+router.patch("/:exersiceId", exerciseController.updateOneExercise);
 
-router.delete("/:excersiceId", exerciseController.deleteOneExcercise);
+router.delete("/:exersiceId", exerciseController.deleteOneExcercise);
 
 module.exports = router;

@@ -32,20 +32,34 @@ const createNewExercise = (req, res)=>{
     res.status(201).send({ status: "ok", data: createdExercise });
 }
 
-const updateOneExcercise = (req, res)=>{
-    const updatedExcercise = excerciseService.updateOneExcercise()
-    res.send("update an existing excercise");
+const updateOneExercise = (req, res)=>{
+    const {
+        body,
+        params: {exersiceId}
+    } = req;
+    if(!exersiceId){
+        return;
+    }
+    const updatedExercise = exerciseService.updateOneExercise(exersiceId, body)
+    res.send({ status: "OK", data: updatedExercise });
+    
 }
 
 const deleteOneExcercise = (req, res)=>{
-    const deletedExcercise = excerciseService.deleteOneExcercise()
-    res.send("delete an existing exercise");
+    const {
+        params: { exersiceId },
+      } = req;
+      if (!exersiceId) {
+        return;
+      }
+      exerciseService.deleteOneExcercise(exersiceId);
+      res.status(204).send({ status: "se borro" });
 }
 
 module.exports= {
     getAllExercises,
     getOneExercise,
     createNewExercise,
-    updateOneExcercise,
-    deleteOneExcercise,
+    updateOneExercise,
+    deleteOneExcercise
 }; 

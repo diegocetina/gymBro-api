@@ -22,18 +22,19 @@ const createNewExercise = (newExercise) => {
     return createdExercise; 
 };
 
-const updateOneExcercise = () => {
-    return ; 
+const updateOneExercise = (excersiceId, changes) => {
+    const updatedExercise = Exercise.updateOneExercise(excersiceId, changes);
+    return updatedExercise; 
 };
 
-const deleteOneExcercise = () => {
-    return ; 
+const deleteOneExcercise = (excersiceId) => {
+    Exercise.deleteOneExcercise(excersiceId) 
 };
 
 module.exports = {
     getAllExercises,
     getOneExercise,
     createNewExercise,
-    updateOneExcercise,
+    updateOneExercise,
     deleteOneExcercise,
 };
