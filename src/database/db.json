@@ -1,0 +1,46 @@
+{
+  "exercises": [
+    {
+      "id": "1",
+      "name": "push ups "
+    },
+    {
+      "id": "2",
+      "name": "SQUAD "
+    },
+    {
+      "id": "3",
+      "name": "leg press"
+    },
+    {
+      "id": "6f10a44d-9cf0-4a4f-aefe-28b6da5bc1ae",
+      "name": "OTRO MAS",
+      "createdAt": "1/17/2023, 4:58:01 PM",
+      "updatedAt": "1/17/2023, 4:58:01 PM"
+    },
+    {
+      "id": "02345fe8-4aad-40a7-8612-24c799a5e998",
+      "name": "el diego",
+      "createdAt": "1/17/2023, 9:12:01 PM",
+      "updatedAt": "1/17/2023, 9:12:01 PM"
+    },
+    {
+      "id": "82e9c01e-21d4-4a47-a796-cdef42ff85d5",
+      "name": "crack",
+      "createdAt": "1/17/2023, 9:12:33 PM",
+      "updatedAt": "1/17/2023, 9:12:33 PM"
+    },
+    {
+      "id": "6bc0311f-1982-4d78-aef3-b80ead247a67",
+      "name": "uno mas",
+      "createdAt": "1/17/2023, 9:12:42 PM",
+      "updatedAt": "1/17/2023, 9:12:42 PM"
+    },
+    {
+      "id": "d8e4fa6c-343d-4813-ba1b-902ab0a1d530",
+      "name": "este lo acabo de modificar",
+      "createdAt": "1/19/2023, 9:41:59 PM",
+      "updatedAt": "1/19/2023, 9:42:30 PM"
+    }
+  ]
+}

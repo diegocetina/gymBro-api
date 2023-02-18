@@ -1,34 +1,65 @@
-const excerciseService = require("../services/exerciseService")
+const bodyParser = require("body-parser");
+const exerciseService = require("../services/exerciseService")
 
-const getAllExcercises = (req, res)=>{
-    const allExcercises = excerciseService.getAllExcercises()
-    res.send("get all excercises");
+const getAllExercises = (req, res)=>{
+    const allExercises = exerciseService.getAllExercises()
+    res.send({ status: "todo en orden", data: allExercises });
 }
 
-const getOneExcercise = (req, res)=>{
-    const excercise = excerciseService.getOneExcercise()
-    res.send("get one excercise");
+const getOneExercise = (req, res)=>{
+    const {
+        params: { exersiceId },
+    } = req;
+    if(!exersiceId){
+        return ;
+    }
+    const exercise = exerciseService.getOneExercise(exersiceId)
+    res.send({ status: "OK", data: exercise });
 }
 
-const createNewExcercise = (req, res)=>{
-    const createdExcercise = excerciseService.createNewExcercise()
-    res.send("create new excercise");
+const createNewExercise = (req, res)=>{
+    const { body } = req;
+    if(
+        !body.name 
+    ){
+        return;
+    }
+    const newExercise = {
+        name: body.name,  
+    }
+
+    const createdExercise = exerciseService.createNewExercise(newExercise)
+    res.status(201).send({ status: "ok", data: createdExercise });
 }
 
-const updateOneExcercise = (req, res)=>{
-    const updatedExcercise = excerciseService.updateOneExcercise()
-    res.send("update an existing excercise");
+const updateOneExercise = (req, res)=>{
+    const {
+        body,
+        params: {exersiceId}
+    } = req;
+    if(!exersiceId){
+        return;
+    }
+    const updatedExercise = exerciseService.updateOneExercise(exersiceId, body)
+    res.send({ status: "OK", data: updatedExercise });
+    
 }
 
 const deleteOneExcercise = (req, res)=>{
-    const deletedExcercise = excerciseService.deleteOneExcercise()
-    res.send("delete an existing exercise");
+    const {
+        params: { exersiceId },
+      } = req;
+      if (!exersiceId) {
+        return;
+      }
+      exerciseService.deleteOneExcercise(exersiceId);
+      res.status(204).send({ status: "se borro" });
 }
 
 module.exports= {
-    getAllExcercises,
-    getOneExcercise,
-    createNewExcercise,
-    updateOneExcercise,
-    deleteOneExcercise,
+    getAllExercises,
+    getOneExercise,
+    createNewExercise,
+    updateOneExercise,
+    deleteOneExcercise
 }; 

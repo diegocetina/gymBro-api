@@ -1,27 +1,40 @@
-const getAllExcercises = () => {
-    return ; 
+const { v4: uuid } = require("uuid");
+const Exercise = require("../database/Exercise");
+
+const getAllExercises = () => {
+    const allExercises = Exercise.getAllExercises();
+    return allExercises; 
 };
 
-const getOneExcercise = () => {
-    return ; 
+const getOneExercise = (exerciseId) => {
+    const exercise = Exercise.getOneExercise(exerciseId)
+    return exercise; 
 };
 
-const createNewExcercise = () => {
-    return ; 
+const createNewExercise = (newExercise) => {
+    const exerciseToInsert = {
+        id: uuid(),
+        ...newExercise,
+        createdAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
+        updatedAt: new Date().toLocaleString("en-US", { timeZone: "UTC" }),
+    };
+    const createdExercise = Exercise.createNewExercise(exerciseToInsert);
+    return createdExercise; 
 };
 
-const updateOneExcercise = () => {
-    return ; 
+const updateOneExercise = (excersiceId, changes) => {
+    const updatedExercise = Exercise.updateOneExercise(excersiceId, changes);
+    return updatedExercise; 
 };
 
-const deleteOneExcercise = () => {
-    return ; 
+const deleteOneExcercise = (excersiceId) => {
+    Exercise.deleteOneExcercise(excersiceId) 
 };
 
 module.exports = {
-    getAllExcercises,
-    getOneExcercise,
-    createNewExcercise,
-    updateOneExcercise,
+    getAllExercises,
+    getOneExercise,
+    createNewExercise,
+    updateOneExercise,
     deleteOneExcercise,
 };
